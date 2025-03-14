@@ -1138,21 +1138,13 @@
         <p>I limiti di frequenza attuali per l'API AGXFeed sono i seguenti:</p>
 
         <ul>
-          <li>60 richieste al minuto per indirizzo IP</li>
-          <li>1000 richieste all'ora per indirizzo IP</li>
+          <li>20 richieste al minuto per indirizzo IP</li>
+          <li>1200 richieste all'ora per indirizzo IP</li>
         </ul>
 
-        <h3>Header dei Limiti di Frequenza</h3>
-        <p>L'API include informazioni sui limiti di frequenza negli header di risposta:</p>
-
-        <ul>
-          <li><code>X-RateLimit-Limit</code>: Il numero massimo di richieste consentite nella finestra temporale corrente</li>
-          <li><code>X-RateLimit-Remaining</code>: Il numero di richieste rimanenti nella finestra temporale corrente</li>
-          <li><code>X-RateLimit-Reset</code>: L'ora in cui la finestra del limite di frequenza corrente si reimposta, in secondi epoch UTC</li>
-        </ul>
 
         <h3>Superamento dei Limiti di Frequenza</h3>
-        <p>Se superi il limite di frequenza, l'API risponderà con un codice di stato 429 Too Many Requests. La risposta includerà un header Retry-After che indica quanto tempo attendere prima di effettuare un'altra richiesta.</p>
+        <p>Se superi il limite di frequenza, l'API risponderà con un codice di stato 429 Too Many Requests.</p>
 
         <h3>Best Practices</h3>
         <p>Per evitare di raggiungere i limiti di frequenza:</p>
@@ -1217,9 +1209,7 @@
         <ul>
           <li>Controlla sempre il codice di stato HTTP della risposta</li>
           <li>Analizza il messaggio di errore dal corpo della risposta</li>
-          <li>Implementa la logica di ripetizione con backoff esponenziale per gli errori 429 e 5xx</li>
           <li>Registra informazioni dettagliate sugli errori per il debug</li>
-          <li>Fornisci messaggi di errore user-friendly nella tua applicazione</li>
         </ul>
       </div>
     </section>
